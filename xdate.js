@@ -18,8 +18,9 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Switch from '@mui/material/Switch';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import Grid from '@mui/material/Grid';
 import PropTypes, {string, bool, func} from "prop-types";
+import DatePicker from "react-datepicker";
+
 
 
 import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
@@ -96,6 +97,30 @@ export function XDate(props) {
     setTimeZone(event.target.value);
     sendState()
   };
+
+  /*
+  const generateDateTimePicker = () => {
+    return (
+        <>
+          <DatePicker
+            selected={startDate}
+            onChange={(date) => setStartDate(date)}
+            selectsStart
+            startDate={startDate}
+            endDate={endDate}
+          />
+          <DatePicker
+            selected={endDate}
+            onChange={(date) => setEndDate(date)}
+            selectsEnd
+            startDate={startDate}
+            endDate={endDate}
+            minDate={startDate}
+          />
+        </>
+    )
+  }
+  */
 
   const generateTimePicker = () => {
     return (
@@ -215,7 +240,6 @@ const timeZoneDialog = () => {
     <div>
       <Stack rowSpacing={0}>
         {showTime ? generateTimePicker() : generateDatePicker()}
-
           {getTimeBar()}
       </Stack>
 
