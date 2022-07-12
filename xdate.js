@@ -67,6 +67,7 @@ export function XDate(props) {
     props.onChange(target)
   }
 
+
   const handleShowTime = (event) => {
     setShowTime(event.target.checked);
     sendState()
@@ -157,8 +158,14 @@ export function XDate(props) {
         display="flex"
         flexWrap="wrap"
         align="start"
-        justifyContent={showTime ? 'space-between' : 'end'}
+        justifyContent={'start'}
       >
+                <FormControlLabel
+          control={
+            <Switch disabled={props.disableShowTimeSwitch} checked={showTime} onChange={handleShowTime} size="small" />
+          }
+          label="Time"
+        />
         {showTime ? (
           <Button
             size="small"
@@ -168,12 +175,7 @@ export function XDate(props) {
             Timezone: {timeZone}
           </Button>
         ) : null}
-        <FormControlLabel
-          control={
-            <Switch disabled={props.disableShowTimeSwitch} checked={showTime} onChange={handleShowTime} size="small" />
-          }
-          label="Time"
-        />
+
       </Box>
     );
   };
@@ -211,14 +213,11 @@ const timeZoneDialog = () => {
 
   return (
     <div>
-      <Grid container rowSpacing={0}>
-        <Grid item xs={12}>
+      <Stack rowSpacing={0}>
         {showTime ? generateTimePicker() : generateDatePicker()}
-        </Grid>
-        <Grid item xs={9}>
+
           {getTimeBar()}
-        </Grid>
-      </Grid>
+      </Stack>
 
       {timeZoneDialog()}
     </div>

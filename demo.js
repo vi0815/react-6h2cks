@@ -31,19 +31,8 @@ export default function MaterialUIPickers() {
           console.log(target)
         }}
       />
-      <br />
-      <p>
-        startdate: {resourceDate.startDateString!=null?resourceDate.startDateString:"null"}<br />
-        startminutes: {resourceDate.startDateMinutesMidnight!=null?resourceDate.startDateMinutesMidnight:"null"}
-        <br />
-        startdatemoment: {resourceDate.startDateMoment!=null?resourceDate.startDateMoment.format('YYYY-MM-DD HH:MM'):"null"}<br />
 
-        enddate: {resourceDate.startDateString!=null?resourceDate.startDateString:"null"}
-        <br />
-        endminutes: {resourceDate.endDateMinutesMidnight!=null?resourceDate.endDateMinutesMidnight:"null"}<br />
-        enddate: {resourceDate.endDateMoment!=null?resourceDate.endDateMoment.format('YYYY-MM-DD HH:MM'):"null"}
-        <br />
-      </p>
+      <p />
       <br /> Event <br /> <br />
       <XDate
         startDate="2022-12-22"
